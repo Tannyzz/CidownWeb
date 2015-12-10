@@ -1,0 +1,7 @@
+@font-face{
+    font-family: "naveli";
+    src: url("naveli.ttf") format("truetype");
+}
+.naveli{
+  font-family: "naveli";
+}
