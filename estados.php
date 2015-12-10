@@ -1,6 +1,6 @@
 <?php 	 
 	header('Content-Type: text/html; charset=UTF-8');
-	$estado = utf8_decode($_GET["estado"]);
+	$estado = ($_GET["estado"]);
 	include("connector.php");
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
 
 	<div class="header-md purple darken-1 hide-on-small-only section scrollspy" id="inicio">
 			<img src="images/logocidown.png" class="left logo responsive-img" height="150px" width="150px">
-			<h2 class="left logo white-text"><?php echo utf8_encode($estado) ?></h2>
+			<h2 class="left logo white-text"><?php echo ($estado) ?></h2>
 		</div>
 		<nav>
 		    <div class="nav-wrapper purple darken-3">
@@ -42,7 +42,7 @@
     	<?php 
 	 
 	$conexion = mysqli_connect($DB_HOST,$DB_USER,$DB_PASS,$DB_DATABASE);
-	@mysql_query("SET NAMES 'utf8'",$conexión);
+	@mysqli_query("SET NAMES 'utf8'",$conexión);
                                 
             if (mysqli_connect_errno()) {
                 echo "Falló la conexión con la Base de Datos MySQL: " . mysqli_connect_error();
@@ -58,7 +58,7 @@
 								      <i class="material-icons red-text">send</i></a>
 								   </span>
 							      <div class="purple divider"></div>
-							      <p><?php echo utf8_encode($row["nombre"]) ?></p>
+							      <p><?php echo ($row["nombre"]) ?></p>
 							      
 							    </div>
 					    	</div>

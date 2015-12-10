@@ -20,7 +20,6 @@
 
 	<script type="text/javascript">
 	<?php $conexion = mysqli_connect($DB_HOST,$DB_USER,$DB_PASS,$DB_DATABASE);
-			mysql_set_charset('utf8');
                                 
             if (mysqli_connect_errno()) {
                 echo "Falló la conexión con la Base de Datos MySQL: " . mysqli_connect_error();
@@ -47,7 +46,7 @@
 		marker.setMap(map);
 
 		var infowindow = new google.maps.InfoWindow({
-		  content:"<?php echo utf8_encode($row['nombre']).'<br>'.utf8_encode($row['direccion']) ?>" 
+		  content:"<?php echo ($row['nombre']).'<br>'.($row['direccion']) ?>" 
 		  });
 
 		infowindow.open(map,marker);
@@ -61,7 +60,7 @@
 
 	<div class="header-md purple darken-1 hide-on-small-only section scrollspy" id="inicio">
 		<img src="images/logocidown.png" class="left logo responsive-img" height="150px" width="150px">
-		<h2 class="left logo white-text"><?php if($row["deleg"] == "No aplica"){echo utf8_encode($row["estado"]);}else{echo utf8_encode($row["deleg"]);}?></h2>
+		<h2 class="left logo white-text"><?php if($row["deleg"] == "No aplica"){echo ($row["estado"]);}else{echo ($row["deleg"]);}?></h2>
 	</div>
 	<nav>
     <div class="nav-wrapper purple darken-3">

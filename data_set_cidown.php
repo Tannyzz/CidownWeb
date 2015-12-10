@@ -4,7 +4,6 @@ include("connector.php");
 	header('Content-Type: text/html; charset=UTF-8');
 	 
 	$conexion = mysqli_connect($DB_HOST,$DB_USER,$DB_PASS,$DB_DATABASE);
-	mysql_set_charset('utf8');
                                 
             if (mysqli_connect_errno()) {
                 echo "Falló la conexión con la Base de Datos MySQL: " . mysqli_connect_error();
@@ -29,7 +28,7 @@ include("connector.php");
 
 	<div class="header-md purple darken-1 hide-on-small-only section scrollspy" id="inicio">
 		<img src="images/logocidown.png" class="left logo responsive-img" height="150px" width="150px">
-		<h2 class="left logo white-text"><?php if($row["deleg"] == "No aplica"){echo utf8_encode($row["estado"]);}else{echo utf8_encode($row["deleg"]);} ?></h2>
+		<h2 class="left logo white-text"><?php if($row["deleg"] == "No aplica"){echo ($row["estado"]);}else{echo ($row["deleg"]);} ?></h2>
 	</div>
 	<nav>
     <div class="nav-wrapper purple darken-3">
@@ -49,19 +48,19 @@ include("connector.php");
 			    	<div class="card-content section scrollspy" id="institucion">
 				      <span class="card-title activator red-text text-darken-4">Institución</span>
 				      <div class="purple divider"></div>
-				      <p><?php echo utf8_encode($row["nombre"]) ?></p>
+				      <p><?php echo ($row["nombre"]) ?></p>
 				      <span class="card-title activator red-text text-darken-4">Dirección</span>
-				      <p><?php echo utf8_encode($row["direccion"]) ?></p>
+				      <p><?php echo ($row["direccion"]) ?></p>
 				      <span class="card-title activator red-text text-darken-4">Código postal</span>
 				      <p><?php echo $row["cp"]?></p>
 				      <span class="card-title activator red-text text-darken-4">Estado</span>
-				      <p><?php echo utf8_encode($row["estado"]) ?></p>
+				      <p><?php echo ($row["estado"]) ?></p>
 				      <span class="card-title activator red-text text-darken-4">Delegación</span>
-				      <p><?php echo utf8_encode($row["deleg"]) ?></p>
+				      <p><?php echo ($row["deleg"]) ?></p>
 				      <span class="card-title activator red-text text-darken-4">Municipio</span>
-				      <p><?php echo utf8_encode($row["municipio"]) ?></p>
+				      <p><?php echo ($row["municipio"]) ?></p>
 				      <span class="card-title activator red-text text-darken-4">Fecha de fundación</span>
-				      <p><?php echo utf8_encode($row["fecha_leg"]) ?></p>
+				      <p><?php echo ($row["fecha_leg"]) ?></p>
 				    </div>
 			    </div>
 				<div class="card">
@@ -80,14 +79,14 @@ include("connector.php");
 			    	<div class="card-content section scrollspy" id="pob_atiende">
 				      <span class="card-title activator red-text text-darken-4">Población que atiende</span>
 				      <div class="purple divider"></div>
-				      <p><?php echo utf8_encode($row["pob_atiende"]) ?></p>
+				      <p><?php echo ($row["pob_atiende"]) ?></p>
 				    </div>
 			    </div>
 			    <div class="card">
 			    	<div class="card-content section scrollspy" id="serv_pro">
 				      <span class="card-title activator red-text text-darken-4">Servicios que proporciona</span>
 				      <div class="purple divider"></div>
-				      <p><?php echo utf8_encode($row["serv_pro"]) ?></p>
+				      <p><?php echo ($row["serv_pro"]) ?></p>
 				    </div>
 			    </div>
 			    <div class="card">
